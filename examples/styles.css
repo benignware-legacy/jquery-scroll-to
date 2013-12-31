@@ -1,0 +1,31 @@
+body {
+  padding: 45px 0;
+  position: relative;
+}
+
+.sidebar {
+  width: 200px;
+}
+
+.sidebar.affix {
+  position: fixed;
+  top: 80px;
+}
+
+.sidebar > .nav {
+  margin: 20px 0;
+} 
+
+.sidebar .nav li a {
+  color: inherit;
+}
+
+.sidebar .nav li.active > a {
+  color: blue;
+}
+
+
+h1[id], h2[id], h3[id] {
+  margin-top: -45px;
+  padding-top: 80px;
+}
