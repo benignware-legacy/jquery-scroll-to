@@ -14,8 +14,8 @@
         
     <mkdir dir="${build.dir}"/>
   
-    <copy todir="${build.js.dir}">
-      <fileset dir="${basedir}/jquery.${build.plugin.name}.js"></fileset>
+    <copy todir="${build.dir}">
+      <fileset dir="${basedir}/src"></fileset>
     </copy>
     
     <java jar="${build.yuicompressor}" fork="true" failonerror="true">
