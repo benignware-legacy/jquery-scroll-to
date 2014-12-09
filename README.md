@@ -8,7 +8,7 @@ Features
 * aborts auto scrolling on user interaction
 
 Usage
-```
+```js
 $(window).scrollTo(x, y, options);
 $(window).scrollTo({top: x, left: y}, options);
 $(window).scrollTo(element, options);
@@ -40,18 +40,3 @@ Options
     <td colspan="3">jquery-animate options</td>
   </tr>
 </table>
-
-
-Rails
------
-
-To integrate jquery-scroll-to with rails add the jquery-benignware-rails gem to your application bundle
-
-```
-gem 'jquery-benignware-rails'
-```
-
-Require the javascript in your application.js
-```
-//= require benignware/jquery.scroll-to.js
-```

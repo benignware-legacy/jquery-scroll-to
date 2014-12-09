@@ -10,7 +10,7 @@
   };
   
   function scrollInteractionHandler() {
-    var element = this == window ? $('html, body') : this;
+    var element = this === window ? $('html, body') : this;
     $(element).stop();
   }
   
@@ -18,15 +18,15 @@
     
     // console.log("SCROLL TO: ", x, y);
     
-    var element = this[0] == window ? $('html, body') : this;
+    var element = this[0] === window ? $('html, body') : this;
     var containerOffset = element.offset();
 
     var a = arguments;
     var object = a[0] instanceof jQuery ? a[0][0] : a[0];
     
-    if (typeof object == 'object' && object != null) {
+    if (typeof object === 'object' && object !== null) {
       options = a[1];
-      if (object.nodeType == 1) {
+      if (object.nodeType === 1) {
         // get element's position
         var elemOffset = $(object).offset();
         x = Math.ceil(elemOffset.left) - containerOffset.left;
@@ -38,7 +38,7 @@
     }
 
     options = $.extend(true, {}, defaults, options);
-    if (typeof object == 'undefined' || object == null) {
+    if (typeof object === 'undefined' || object === null) {
       return null;
     }
     
@@ -53,7 +53,9 @@
     var complete = options.complete;
     options.complete = function() {
       $(element).unbind('onmousewheel DOMMouseScroll touchmove', scrollInteractionHandler);
-      if (typeof complete == 'function') complete.apply(this, arguments);
+      if (typeof complete === 'function') {
+        complete.apply(this, arguments);
+      }
     };
     
     $(element).animate({
@@ -61,7 +63,7 @@
       scrollLeft: x
     }, options);
     
-  };
+  }
   
   
   $.fn['scrollTo'] = scrollTo;
